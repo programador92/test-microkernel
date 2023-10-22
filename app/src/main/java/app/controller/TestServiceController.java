@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -18,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 public class TestServiceController {
 
 	@GetMapping("/token")
-	public ResponseEntity<RespuestaToken> test() {
+	public RespuestaToken test() {
 		RestTemplate restTemplate = new RestTemplate();
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -38,8 +39,9 @@ public class TestServiceController {
 	            "https://ciencuadras-prod-api-auth.auth.us-east-1.amazoncognito.com/oauth2/token",
 	            entity,
 	            RespuestaToken.class); 
-	    System.out.println("Respuesta: "+respuesta); 
-	    return respuesta;
+	    System.out.println("Respuesta: "+respuesta);   
+	    System.out.println("body: "+respuesta.getBody());
+	    return respuesta.getBody();    
 	}
 	
 	
