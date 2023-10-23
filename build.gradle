@@ -27,7 +27,7 @@ subprojects {
 	sourceCompatibility = 1.8 // java 8
 	targetCompatibility = 1.8
 	
-	if (project.name == "app") {
+	if (project.name == "house-finder-core") { 
         //println project.name
 		tasks.withType(Jar) {
 			destinationDir = file("$rootDir/build/libs")

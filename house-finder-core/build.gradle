@@ -22,8 +22,11 @@ jar {
     }
 }
 */
-dependencies {
-    compile project(':base')
+dependencies { 
+	implementation project(':house-finder-api')
+    implementation project(':fincaraiz-plugin') 
+    implementation project(':metrocuadrado-plugin') 
+    implementation project(':ciencuadras-plugin')   
     
     implementation("org.springframework.boot:spring-boot-starter-web:2.4.11")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.4.11")

@@ -1,5 +1,7 @@
-rootProject.name = 'gradle-multi-project-sample'
+rootProject.name = 'house-finder'
 
-include 'common'
-include 'base'
-include 'app'
+include 'house-finder-core'
+include 'house-finder-api'
+include 'fincaraiz-plugin'
+include 'metrocuadrado-plugin'
+include 'ciencuadras-plugin'
