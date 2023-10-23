@@ -18,31 +18,37 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/testing")
 public class TestServiceController {
 
+	@GetMapping("/health")
+	public ResponseEntity<?> health() {
+		System.out.println("health");
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
 	@GetMapping("/token")
 	public RespuestaToken test() {
 		RestTemplate restTemplate = new RestTemplate();
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-	    headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-	    headers.add(
-	        "Authorization",
-	        "Basic MXRjbW03MzQyajY2NjFvNDRnZ2JvNGoxNnA6MTlnYW1hOXJxaXRodHE4OWZkN3NoYzl2Y2xtdXVtbWFoYmJnOTc1ZjJpNzB0dDFrc21saA==");
-	    headers.add("Content-Type", "application/x-www-form-urlencoded");
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+		headers.add(
+				"Authorization",
+				"Basic MXRjbW03MzQyajY2NjFvNDRnZ2JvNGoxNnA6MTlnYW1hOXJxaXRodHE4OWZkN3NoYzl2Y2xtdXVtbWFoYmJnOTc1ZjJpNzB0dDFrc21saA==");
+		headers.add("Content-Type", "application/x-www-form-urlencoded");
 
-	    MultiValueMap<String, String> bodyParamMap = new LinkedMultiValueMap<>();
-	    bodyParamMap.add("grant_type", "client_credentials");
+		MultiValueMap<String, String> bodyParamMap = new LinkedMultiValueMap<>();
+		bodyParamMap.add("grant_type", "client_credentials");
 
-	    HttpEntity entity = new HttpEntity<>(bodyParamMap, headers);
- 
-	    ResponseEntity<RespuestaToken> respuesta =
-	        restTemplate.postForEntity(
-	            "https://ciencuadras-prod-api-auth.auth.us-east-1.amazoncognito.com/oauth2/token",
-	            entity,
-	            RespuestaToken.class); 
-	    System.out.println("Respuesta: "+respuesta);   
-	    System.out.println("body: "+respuesta.getBody());
-	    return respuesta.getBody();    
+		HttpEntity entity = new HttpEntity<>(bodyParamMap, headers);
+
+		ResponseEntity<RespuestaToken> respuesta =
+				restTemplate.postForEntity(
+						"https://ciencuadras-prod-api-auth.auth.us-east-1.amazoncognito.com/oauth2/token",
+						entity,
+						RespuestaToken.class); 
+		System.out.println("Respuesta: "+respuesta);   
+		System.out.println("body: "+respuesta.getBody());
+		return respuesta.getBody();    
 	}
-	
-	
+
+
 }

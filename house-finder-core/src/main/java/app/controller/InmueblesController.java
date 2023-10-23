@@ -14,10 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-@Controller
+@RestController
 @RequestMapping("/inmuebles")
 public class InmueblesController {
 
@@ -97,8 +99,8 @@ public class InmueblesController {
     return response.getBody().getTotalHits();
   }
 
-  @RequestMapping("/listar")
-  public String listarInmuebles(Model model) {
+  @GetMapping("/listar") 
+  public RespuestaFinal listarInmuebles() {
 
     //		long inicio = System.currentTimeMillis();
     //		PlataformaInmobiliaria pa = new FincaRaiz();
@@ -145,10 +147,10 @@ public class InmueblesController {
       resultado += completableFuture.join() + " ";
     }
     System.out.println("resultado " + resultado);
-    model.addAttribute("unionresultados", resultado);
+    //model.addAttribute("unionresultados", resultado);
     long fin = System.currentTimeMillis();
     long tiempo = fin - inicio;
-    model.addAttribute("tiempototal", tiempo);
+    //model.addAttribute("tiempototal", tiempo);
     System.out.println(tiempo + " milisegundos");
 
     // inicio secuencial
@@ -166,6 +168,6 @@ public class InmueblesController {
     //        System.out.println(tiempo +" milisegundos");
     // fin secuencial
 
-    return "inmuebles";
+    return new RespuestaFinal(resultado, tiempo);
   }
 }
