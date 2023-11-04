@@ -1,4 +1,4 @@
-package app;
+package app.house_finder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Main {
 
   public static void main(String[] args) {
-	  System.out.println("Init"); 
+	  System.out.println("Init v2"); 
     SpringApplication.run(Main.class, args);
   }
 }

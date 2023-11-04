@@ -1,4 +1,4 @@
-package app.controller;
+package app.house_finder.test;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package app.controller;
+package app.house_finder.test;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

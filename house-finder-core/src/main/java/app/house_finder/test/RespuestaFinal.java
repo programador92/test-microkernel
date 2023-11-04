@@ -1,4 +1,4 @@
-package app.controller;
+package app.house_finder.test;
 
 public class RespuestaFinal {
 
