@@ -1,4 +1,4 @@
-package base;
+package com.metrocuadrado.service;
 
 public class Message {
 
