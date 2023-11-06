@@ -1,5 +1,6 @@
 package com.metrocuadrado.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import api.house_finder.dto.RealEstateSearchRequestDTO;
@@ -15,7 +16,10 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
 	@Override
 	public List<RealEstateSearchResponseDTO> realEstateSearch(
 			RealEstateSearchRequestDTO realEstateSearchRequestDTO) {
-		return null;
-	}
+		
+		List<RealEstateSearchResponseDTO> list = new ArrayList<>();
+		list.add(new RealEstateSearchResponseDTO(2000000d)); 
+		return list;
+	} 
 
 }

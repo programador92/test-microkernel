@@ -22,7 +22,8 @@ public class RealEstateController {
 			RealEstateSearchRequestDTO realEstateSearchRequestDTO) { 
 		System.out.println("search service");      
 		List<RealEstateSearchResponseDTO> resp = realEstateSearchService.realEstateSearch(realEstateSearchRequestDTO);
-		return resp;
+		System.out.println("Respuesta "+resp);
+		return resp; 
 	} 
 	
 }

@@ -2,6 +2,8 @@ package app.house_finder.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,15 +23,29 @@ public class RealEstateSearchServiceImpl implements RealEstateSearchService{
 	public List<RealEstateSearchResponseDTO> realEstateSearch(
 			RealEstateSearchRequestDTO realEstateSearchRequestDTO) {
 
+		List<CompletableFuture<List<RealEstateSearchResponseDTO>>> completableFuturelist = 
+				new ArrayList<>();
+		List<RealEstateSearchResponseDTO> realEstateList = new ArrayList<>();
+		
 		for (RealEstatePlatform realEstatePlatform : realEstatePlatformList) {
 			System.out.println("Name: "+realEstatePlatform.getName()+" enabled: "+
-					realEstatePlatform.isEnabled());
+					realEstatePlatform.isEnabled()); 
+			if(realEstatePlatform.isEnabled()) {
+				CompletableFuture<List<RealEstateSearchResponseDTO>> completableFuture =
+						CompletableFuture.supplyAsync(
+								(Supplier<List<RealEstateSearchResponseDTO>>) 
+								() -> realEstatePlatform.realEstateSearch(
+										realEstateSearchRequestDTO));
+				completableFuturelist.add(completableFuture);
+			}
 		}  
-		
-		List<RealEstateSearchResponseDTO> list = new ArrayList<>();
-		list.add(new RealEstateSearchResponseDTO(1000500d)); 
 
-		return list;   
-	}
+		for (CompletableFuture<List<RealEstateSearchResponseDTO>> completableFuture : completableFuturelist) {
+			realEstateList.addAll(completableFuture.join());
+		} 
+		
+		//TODO quickSort by price
+		return realEstateList; 
+	} 
 
 }
