@@ -18,7 +18,7 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
 			RealEstateSearchRequestDTO realEstateSearchRequestDTO) {
 		
 		List<RealEstateSearchResponseDTO> list = new ArrayList<>();
-		list.add(new RealEstateSearchResponseDTO(2000000d)); 
+		list.add(new RealEstateSearchResponseDTO()); 
 		return list;
 	} 
 
