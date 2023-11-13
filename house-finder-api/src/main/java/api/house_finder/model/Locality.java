@@ -1,6 +1,6 @@
 package api.house_finder.model;
 
-public enum Locality {    
+public enum Locality {      
 	
 	USAQUEN,
 	CHAPINERO,
@@ -20,7 +20,6 @@ public enum Locality {
 	PUENTE_ARANDA,
 	CANDELARIA,
 	RAFAEL_URIBE_URIBE,
-	CIUDAD_BOLIVAR,
-	SUMAPAZ;
+	CIUDAD_BOLIVAR;  
 	
 }

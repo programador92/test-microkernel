@@ -8,6 +8,6 @@ public enum City {
 	BARRANQUILLA,
 	MANIZALES,
 	CARTAGENA,
-	BUCARAMANGA;
+	BUCARAMANGA;  
 	
 }

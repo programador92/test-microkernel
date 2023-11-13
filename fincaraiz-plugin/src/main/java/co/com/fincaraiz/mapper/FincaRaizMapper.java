@@ -43,18 +43,70 @@ public class FincaRaizMapper {
 			propertyTypeStr = co.com.fincaraiz.model.request.PropertyTypeEnum.APARTMENT.getDescription();
 		} 
 		PropertyType propertyType = new PropertyType(Arrays.asList(propertyTypeStr));
-		 
+		  
 		co.com.fincaraiz.model.request.City city = null;
 		co.com.fincaraiz.model.request.Locality locality = null;
 		Location location = null;
 		if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.BOGOTA)) {
-			if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.ENGATIVA)) {
+			if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.USAQUEN)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.USAQUEN.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.CHAPINERO)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.CHAPINERO.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.SANTA_FE)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.SANTA_FE.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.SAN_CRISTOBAL)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.SAN_CRISTOBAL.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.USME)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.USME.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.TUNJUELITO)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.TUNJUELITO.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.BOSA)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.BOSA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.KENNEDY)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.KENNEDY.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.FONTIBON)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.FONTIBON.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.ENGATIVA)) {
 				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.ENGATIVA.getDescription()));
-			}  
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.SUBA)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.SUBA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.BARRIOS_UNIDOS)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.BARRIOS_UNIDOS.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.TEUSAQUILLO)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.TEUSAQUILLO.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.MARTIRES)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.MARTIRES.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.ANTONIO_NARINO)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.ANTONIO_NARINO.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.PUENTE_ARANDA)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.PUENTE_ARANDA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.CANDELARIA)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.CANDELARIA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.RAFAEL_URIBE_URIBE)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.RAFAEL_URIBE_URIBE.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.CIUDAD_BOLIVAR)) {
+				locality = new co.com.fincaraiz.model.request.Locality(Arrays.asList(LocalityEnum.CIUDAD_BOLIVAR.getDescription()));
+			}
+			 
 		}else {
-			if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.MEDELLIN)) {
+			if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.MEDELLIN)) {      
 				city = new co.com.fincaraiz.model.request.City(
 						Arrays.asList(CityEnum.MEDELLIN.getCode(), CityEnum.MEDELLIN.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.CALI)) {
+				city = new co.com.fincaraiz.model.request.City(
+						Arrays.asList(CityEnum.CALI.getCode(), CityEnum.CALI.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.BARRANQUILLA)) {
+				city = new co.com.fincaraiz.model.request.City(  
+						Arrays.asList(CityEnum.BARRANQUILLA.getCode(), CityEnum.BARRANQUILLA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.MANIZALES)) {
+				city = new co.com.fincaraiz.model.request.City(
+						Arrays.asList(CityEnum.MANIZALES.getCode(), CityEnum.MANIZALES.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.CARTAGENA)) {
+				city = new co.com.fincaraiz.model.request.City(
+						Arrays.asList(CityEnum.CARTAGENA.getCode(), CityEnum.CARTAGENA.getDescription()));
+			}else if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.BUCARAMANGA)) {
+				city = new co.com.fincaraiz.model.request.City(
+						Arrays.asList(CityEnum.BUCARAMANGA.getCode(), CityEnum.BUCARAMANGA.getDescription()));
 			}
 		} 
 		location = new Location(city, locality); 

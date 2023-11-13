@@ -71,9 +71,11 @@ public class FincaRaizPlatform extends RealEstatePlatform {
 			realEstateSearchResponseDTO.setContact_whatsapp(null); 
 			  
 			List<String> photosList = new ArrayList<String>();   
-			for (ImageList image : hit.get_source().getListing()
-					.getMedia().getPhotos().get(0).getList()) {
-				photosList.add(image.getImage().getFull_size());
+			if(hit.get_source().getListing().getMedia().getPhotos() != null) {  
+				for (ImageList image : hit.get_source().getListing()
+						.getMedia().getPhotos().get(0).getList()) { 
+					photosList.add(image.getImage().getFull_size());
+				}
 			}
 			
 			realEstateSearchResponseDTO.setPhotos(photosList);   
