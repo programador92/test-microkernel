@@ -16,9 +16,9 @@ public enum LocalityEnum {
 	BARRIOS_UNIDOS("Barrios Unidos"),
 	TEUSAQUILLO("Teusaquillo"),
 	MARTIRES("Los Martires"),
-	ANTONIO_NARINO("Antonio Nariño"), 
+	ANTONIO_NARINO("Antonio Nari\u00f1o"),  
 	PUENTE_ARANDA("Puente Aranda"),
-	CANDELARIA("La Candelaria"),
+	CANDELARIA("La Candelaria"), 
 	RAFAEL_URIBE_URIBE("Rafael Uribe Uribe"), 
 	CIUDAD_BOLIVAR("Ciudad Bolivar");     
 	

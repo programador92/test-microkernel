@@ -66,7 +66,7 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
         	realEstateSearchResponseDTO.setOffer_type(realEstateSearchRequestDTO.getOfferType());
         	realEstateSearchResponseDTO.setPhotos(Arrays.asList(result.getImageLink()));
         	DecimalFormat df = new DecimalFormat("#");
-        	df.setMaximumFractionDigits(0); 
+        	df.setMaximumFractionDigits(0);   
         	realEstateSearchResponseDTO.setPrice(df.format(result.getMvalorventa()));  
         	realEstateSearchResponseDTO.setReal_estate_platform("METROCUADRADO");
         	realEstateSearchResponseDTO.setReal_estate_type(realEstateSearchRequestDTO.getRealEstateType());

@@ -3,9 +3,9 @@ package com.metrocuadrado.model.request;
 public enum CityEnum {
 
 	BOGOTA("Bogota"),   
-	MEDELLIN("Medellín"),    
+	MEDELLIN("Medell\u00edn"),     
 	CALI("Cali"),  
-	BARRANQUILLA("Barranquilla"),
+	BARRANQUILLA("Barranquilla"), 
 	MANIZALES("Manizales"), 
 	CARTAGENA("Cartagena de Indias"),   
 	BUCARAMANGA("Bucaramanga"); 

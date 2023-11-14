@@ -21,8 +21,8 @@ public class MetroCuadradoMapper {
 		queryParam = queryParam+"&saleRange="+realEstateSearchRequestDTO.getPrice().getMin();   
 		queryParam = queryParam+"&saleRange="+realEstateSearchRequestDTO.getPrice().getMax();   
 		   
-		if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.BOGOTA)) {
-			queryParam = queryParam+"&city=bogotá"; 
+		if(realEstateSearchRequestDTO.getLocation().getCity().equals(City.BOGOTA)) { 
+			queryParam = queryParam+"&city=bogot\u00e1";          
 			if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.USAQUEN)) {
 				queryParam = queryParam+"&neighborhood="+com.metrocuadrado.model.request.LocalityEnum.USAQUEN.getDescription(); 
 			}else if(realEstateSearchRequestDTO.getLocation().getLocality().equals(Locality.CHAPINERO)) {
