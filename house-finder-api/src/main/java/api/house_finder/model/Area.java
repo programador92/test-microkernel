@@ -2,38 +2,38 @@ package api.house_finder.model;
 
 public class Area { 
  
-	private Double min;
-	private Double max;
+	private String min;
+	private String max;
 
 	public Area() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Area(Double min, Double max) {
+	public Area(String min, String max) {
 		super();
 		this.min = min;
 		this.max = max;
 	}
 
-	public Double getMin() {
+	public String getMin() {
 		return min;
 	}
 
-	public void setMin(Double min) {
+	public void setMin(String min) {
 		this.min = min;
 	}
 
-	public Double getMax() {
+	public String getMax() {
 		return max;
 	}
 
-	public void setMax(Double max) {
+	public void setMax(String max) {
 		this.max = max;
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { 
 		return "Area [min=" + min + ", max=" + max + "]";
 	}
 	

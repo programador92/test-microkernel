@@ -3,8 +3,7 @@ package co.com.fincaraiz.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpEntity; 
 import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
@@ -23,7 +22,7 @@ public class FincaRaizPlatform extends RealEstatePlatform {
  
 	public FincaRaizPlatform(String name, String version, boolean enabled) {
 		super(name, version, enabled);
-	} 
+	}   
  
 	@Override
 	public List<RealEstateSearchResponseDTO> realEstateSearch(

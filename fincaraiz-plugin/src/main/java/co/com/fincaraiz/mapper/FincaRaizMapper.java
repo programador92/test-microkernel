@@ -109,19 +109,19 @@ public class FincaRaizMapper {
 						Arrays.asList(CityEnum.BUCARAMANGA.getCode(), CityEnum.BUCARAMANGA.getDescription()));
 			}
 		} 
-		location = new Location(city, locality); 
+		location = new Location(city, locality);  
 
-		Price price = new Price(realEstateSearchRequestDTO.getPrice().getMin(), 
-				realEstateSearchRequestDTO.getPrice().getMax()); 
+		Price price = new Price(Double.parseDouble(realEstateSearchRequestDTO.getPrice().getMin()), 
+				Double.parseDouble(realEstateSearchRequestDTO.getPrice().getMax()));  
 		
-		//TODO validate
+		//TODO validate  
 		Room room = new Room(Arrays.asList("ROOM_"+realEstateSearchRequestDTO.getNumRooms()));
 		
 		Stratum stratum = new Stratum(Arrays.asList(realEstateSearchRequestDTO.getStratum().toString()));
 		
-		Area area = new Area(realEstateSearchRequestDTO.getArea().getMin(), 
-				realEstateSearchRequestDTO.getArea().getMax());
-		
+		Area area = new Area(Double.parseDouble(realEstateSearchRequestDTO.getArea().getMin()), 
+				Double.parseDouble(realEstateSearchRequestDTO.getArea().getMax()));
+		  
 		Bath bath = new Bath(Arrays.asList("BATH_"+realEstateSearchRequestDTO.getNumBaths()));
 		
 		Garage garage = new Garage(Arrays.asList("GARAGE_"+realEstateSearchRequestDTO.getNumGarages()));

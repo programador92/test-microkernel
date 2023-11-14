@@ -1,34 +1,34 @@
 package api.house_finder.model;
 
-public class Price {  
+public class Price {   
 
-	private Double min;
-	private Double max;
-
+	private String min;
+	private String max;
+	
 	public Price() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Price(Double min, Double max) {
+	public Price(String min, String max) {
 		super();
 		this.min = min;
 		this.max = max;
 	}
 
-	public Double getMin() {
+	public String getMin() {
 		return min;
 	}
 
-	public void setMin(Double min) {
+	public void setMin(String min) {
 		this.min = min;
 	}
 
-	public Double getMax() {
+	public String getMax() {
 		return max;
 	}
 
-	public void setMax(Double max) {
+	public void setMax(String max) {
 		this.max = max;
 	}
 
@@ -37,4 +37,4 @@ public class Price {
 		return "Price [min=" + min + ", max=" + max + "]";
 	}
 	
-}
+} 
