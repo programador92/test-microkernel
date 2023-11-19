@@ -53,9 +53,8 @@ public class FincaRaizPlatform extends RealEstatePlatform {
 					realEstateSearchRequestDTO.getRealEstateType());
 			realEstateSearchResponseDTO.setOffer_type(
 					realEstateSearchRequestDTO.getOfferType());
-			realEstateSearchResponseDTO.setDescription(
-					realEstateSearchRequestDTO.getRealEstateType().name());
-			realEstateSearchResponseDTO.setArea( 
+			realEstateSearchResponseDTO.setDescription(getDescription(hit));
+			realEstateSearchResponseDTO.setArea(   
 					hit.get_source().getListing().getArea()); 
 			realEstateSearchResponseDTO.setNum_rooms(
 					realEstateSearchRequestDTO.getNumRooms());
@@ -85,4 +84,24 @@ public class FincaRaizPlatform extends RealEstatePlatform {
 		return responseList; 
 	}   
 
+	public String getDescription(Hit hit) {
+		String title = hit.get_source().getListing().getTitle()+".";
+		String state = "Estado del inmueble: "+ 
+		(hit.get_source().getListing().isIs_new() == true ? "Nuevo.": "Usado.");
+		String publisher = "Anuncio publicado por "; 
+		if(hit.get_source().getListing().getClient()
+				.getClient_type().equalsIgnoreCase("BROKER")) { 
+			publisher = publisher + "agencia inmobiliaria: "+hit.get_source().getListing()
+					.getClient().getCompany_name()+".";
+		}else {  
+			publisher = publisher + "agente privado : "+hit.get_source().getListing()
+					.getClient().getFirst_name()+" "+hit.get_source().getListing()
+					.getClient().getLast_name()+"."; 
+		}		 
+		String code = "Codigo de Fincaraiz del inmueble: "+hit.get_source()
+		.getListing().getFr_property_id().toString(); 
+		  
+		return title+state+publisher+code;   
+	}
+	
 } 
