@@ -8,7 +8,7 @@ plugins:
     version: "v1.0"
     enabled: true
   ciencuadras:
-    version: "v1.0"
-    enabled: true 
+    version: "v1.0" 
+    enabled: false 
 
   

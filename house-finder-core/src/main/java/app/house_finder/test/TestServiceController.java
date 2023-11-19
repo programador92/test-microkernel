@@ -30,7 +30,7 @@ public class TestServiceController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-		headers.add(
+		headers.add( 
 				"Authorization",
 				"Basic MXRjbW03MzQyajY2NjFvNDRnZ2JvNGoxNnA6MTlnYW1hOXJxaXRodHE4OWZkN3NoYzl2Y2xtdXVtbWFoYmJnOTc1ZjJpNzB0dDFrc21saA==");
 		headers.add("Content-Type", "application/x-www-form-urlencoded");

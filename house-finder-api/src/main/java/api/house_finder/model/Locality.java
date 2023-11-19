@@ -2,8 +2,9 @@ package api.house_finder.model;
 
 public enum Locality {      
 	
+	NULL, 
 	USAQUEN,
-	CHAPINERO,
+	CHAPINERO,  
 	SANTA_FE,
 	SAN_CRISTOBAL,
 	USME,
