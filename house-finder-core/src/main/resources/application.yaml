@@ -3,12 +3,12 @@ server:
 plugins:
   fincaraiz:
     version: "v1.0"
-    enabled: true
+    enabled: true 
   metrocuadrado:
     version: "v1.0"
     enabled: true
   ciencuadras:
-    version: "v1.0" 
-    enabled: false 
+    version: "v1.0"  
+    enabled: true   
 
   
