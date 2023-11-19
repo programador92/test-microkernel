@@ -20,15 +20,16 @@ public class RealEstateController {
 	@Autowired
 	private RealEstateSearchService realEstateSearchService;
 	
-	@PostMapping("/search")  
+	@PostMapping("/search")   
 	public List<RealEstateSearchResponseDTO> search( 
 			@RequestBody RealEstateSearchRequestDTO realEstateSearchRequestDTO) { 
-		System.out.println("realEstateSearchRequestDTO: "+realEstateSearchRequestDTO); 
-		System.out.println("search service");      
-		List<RealEstateSearchResponseDTO> resp = realEstateSearchService
+		System.out.println("Init search service");   
+		System.out.println("search service request: "+realEstateSearchRequestDTO);     
+		List<RealEstateSearchResponseDTO> response = realEstateSearchService
 				.realEstateSearch(realEstateSearchRequestDTO);
-		System.out.println("Respuesta "+resp);
-		return resp; 
+		System.out.println("search service response: "+response); 
+		System.out.println("End search service"); 
+		return response;  
 	} 
 	
 }

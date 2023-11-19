@@ -1,6 +1,9 @@
 package app.house_finder.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
@@ -43,9 +46,11 @@ public class RealEstateSearchServiceImpl implements RealEstateSearchService{
 		for (CompletableFuture<List<RealEstateSearchResponseDTO>> completableFuture : completableFuturelist) {
 			realEstateList.addAll(completableFuture.join());
 		} 
-		
-		//TODO quickSort by price
-		return realEstateList; 
+		 
+		Collections.sort(realEstateList, 
+				Comparator.comparing(RealEstateSearchResponseDTO::getPrice));
+		     
+		return realEstateList;    
 	} 
 
 }
