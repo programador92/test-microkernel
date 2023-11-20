@@ -94,10 +94,10 @@ public class FincaRaizPlatform extends RealEstatePlatform {
 			publisher = publisher + "agencia inmobiliaria: "+hit.get_source().getListing()
 					.getClient().getCompany_name()+".";
 		}else {  
-			publisher = publisher + "agente privado : "+hit.get_source().getListing()
+			publisher = publisher + "agente privado: "+hit.get_source().getListing()
 					.getClient().getFirst_name()+" "+hit.get_source().getListing()
 					.getClient().getLast_name()+"."; 
-		}		 
+		}		  
 		String code = "Codigo de Fincaraiz del inmueble: "+hit.get_source()
 		.getListing().getFr_property_id().toString(); 
 		  

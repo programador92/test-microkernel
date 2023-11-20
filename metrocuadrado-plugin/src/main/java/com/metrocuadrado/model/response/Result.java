@@ -1,7 +1,7 @@
 package com.metrocuadrado.model.response;
 
-public class Result {     
-	
+public class Result {      
+	 
 	private String contactPhone;   
 	private String whatsapp;
 	private String title;
@@ -11,6 +11,7 @@ public class Result {
 	private String mbarrio; 
 	private String mnombrecomunbarrio; 
 	private String mestadoinmueble; 
+	private String midinmueble;
 	
 	public Result() {
 		super();
@@ -18,9 +19,9 @@ public class Result {
 	}
 
 	public Result(String contactPhone, String whatsapp, String title, String imageLink, Double mvalorventa,
-			String marea, String mbarrio, String mnombrecomunbarrio, String mestadoinmueble) {
+			String marea, String mbarrio, String mnombrecomunbarrio, String mestadoinmueble, String midinmueble) {
 		super();
-		this.contactPhone = contactPhone; 
+		this.contactPhone = contactPhone;
 		this.whatsapp = whatsapp;
 		this.title = title;
 		this.imageLink = imageLink;
@@ -29,6 +30,7 @@ public class Result {
 		this.mbarrio = mbarrio;
 		this.mnombrecomunbarrio = mnombrecomunbarrio;
 		this.mestadoinmueble = mestadoinmueble;
+		this.midinmueble = midinmueble;
 	}
 
 	public String getContactPhone() {
@@ -101,13 +103,22 @@ public class Result {
 
 	public void setMestadoinmueble(String mestadoinmueble) {
 		this.mestadoinmueble = mestadoinmueble;
-	}  
+	}
+
+	public String getMidinmueble() {
+		return midinmueble;
+	}
+
+	public void setMidinmueble(String midinmueble) {
+		this.midinmueble = midinmueble;
+	}
 
 	@Override
-	public String toString() {  
+	public String toString() { 
 		return "Result [contactPhone=" + contactPhone + ", whatsapp=" + whatsapp + ", title=" + title + ", imageLink="
 				+ imageLink + ", mvalorventa=" + mvalorventa + ", marea=" + marea + ", mbarrio=" + mbarrio
-				+ ", mnombrecomunbarrio=" + mnombrecomunbarrio + ", mestadoinmueble=" + mestadoinmueble + "]";
-	}
+				+ ", mnombrecomunbarrio=" + mnombrecomunbarrio + ", mestadoinmueble=" + mestadoinmueble
+				+ ", midinmueble=" + midinmueble + "]";
+	} 
 	
 }

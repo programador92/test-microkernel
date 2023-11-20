@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
+
 import api.house_finder.dto.*;
 import app.house_finder.service.RealEstateSearchService;
 
@@ -23,11 +25,13 @@ public class RealEstateController {
 	@PostMapping("/search")   
 	public List<RealEstateSearchResponseDTO> search( 
 			@RequestBody RealEstateSearchRequestDTO realEstateSearchRequestDTO) { 
-		System.out.println("Init search service");   
-		System.out.println("search service request: "+realEstateSearchRequestDTO);     
+		System.out.println("Init search service");    
+		System.out.println("search service request: " 
+				+new Gson().toJson(realEstateSearchRequestDTO));          
 		List<RealEstateSearchResponseDTO> response = realEstateSearchService
 				.realEstateSearch(realEstateSearchRequestDTO);
-		System.out.println("search service response: "+response); 
+		System.out.println("search service response: "
+				+new Gson().toJson(response));    
 		System.out.println("End search service"); 
 		return response;  
 	} 

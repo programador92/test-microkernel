@@ -31,8 +31,8 @@ public class RealEstateSearchServiceImpl implements RealEstateSearchService{
 		List<RealEstateSearchResponseDTO> realEstateList = new ArrayList<>();
 		
 		for (RealEstatePlatform realEstatePlatform : realEstatePlatformList) {
-			System.out.println("Name: "+realEstatePlatform.getName()+" enabled: "+
-					realEstatePlatform.isEnabled()); 
+			System.out.println("Plugin "+realEstatePlatform.getName()+" enabled: "+
+					realEstatePlatform.isEnabled());   
 			if(realEstatePlatform.isEnabled()) {
 				CompletableFuture<List<RealEstateSearchResponseDTO>> completableFuture =
 						CompletableFuture.supplyAsync(

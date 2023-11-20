@@ -48,7 +48,9 @@ public class CienCuadrasPlatform extends RealEstatePlatform {
 						"https://api-backend.ciencuadras.com/prod/search-results/v1",
 						entity,  
 						CienCuadrasResponseDTO.class);   
-		
+		System.out.println("Ciencuadras Service Response: "+
+						new Gson().toJson(response.getBody()));    
+		 
 		List<RealEstateSearchResponseDTO> responseList = new ArrayList<>();
 		for (Result result: response.getBody().getData().getResults()) {    
 			RealEstateSearchResponseDTO realEstateSearchResponseDTO = 
@@ -61,7 +63,7 @@ public class CienCuadrasPlatform extends RealEstatePlatform {
 					realEstateSearchRequestDTO.getRealEstateType());
 			realEstateSearchResponseDTO.setOffer_type(
 					realEstateSearchRequestDTO.getOfferType());
-			realEstateSearchResponseDTO.setDescription("description"); 
+			realEstateSearchResponseDTO.setDescription(getDescription(result)); 
 			realEstateSearchResponseDTO.setArea(result.getArea());
 			realEstateSearchResponseDTO.setNum_rooms(
 					realEstateSearchRequestDTO.getNumRooms());
@@ -78,7 +80,7 @@ public class CienCuadrasPlatform extends RealEstatePlatform {
 			responseList.add(realEstateSearchResponseDTO);
 		}   
 		System.out.println("Ciencuadras Response: "+responseList);        
-		
+		 
 		return responseList;
 	}
 	
@@ -102,9 +104,21 @@ public class CienCuadrasPlatform extends RealEstatePlatform {
 						"https://ciencuadras-prod-api-auth.auth.us-east-1.amazoncognito.com/oauth2/token",
 						entity,  
 						TokenResponseDTO.class); 
-		System.out.println("Token Service Response: "+response.getBody());   
+		System.out.println("Token Service Response: "+
+				new Gson().toJson(response.getBody()));   
 		return response.getBody();    
 	} 
 	
+	public String getDescription(Result result) {   
+		return result.getRealEstateType()+" en "
+				+result.getOfferType().toLowerCase()+". Ubicada en "
+				+result.getLocality()+", "+result.getCity()+", "+result.getDepartment()
+				+". Vecindario "+result.getNeighborhood().toLowerCase()+"."
+				+"Antiguedad: "+result.getAntiquity()+", "    
+				+"Direccion: "+result.getAddress()+". Anuncio publicado por "
+				+result.getUserType()+"-"+result.getUserName()+", correo: "
+				+result.getRealStateEmail()+". Codigo de Ciencuadras del inmueble: "
+				+result.getCode();  
+	}
 
 }

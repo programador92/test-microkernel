@@ -39,8 +39,8 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
         HttpHeaders headers = new HttpHeaders();    
         headers.set("x-api-key", "P1MfFHfQMOtL16Zpg36NcntJYCLFm8FqFfudnavl"); 
         
-        System.out.println("resourceUrl "+resourceUrl); 
-        
+        System.out.println("Metrocuadrado Request: "+resourceUrl); 
+           
         HttpEntity<Void> requestEntity = new HttpEntity<>(headers);    
         ResponseEntity<MetroCuadradoResponseDTO> response = restTemplate.exchange(
         		resourceUrl, HttpMethod.GET, requestEntity, MetroCuadradoResponseDTO.class);
@@ -56,8 +56,9 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
         	realEstateSearchResponseDTO.setContact_whatsapp(result.getWhatsapp());
         	realEstateSearchResponseDTO.setDescription(
         			result.getTitle()+", "+"barrio: "+result.getMbarrio()+", "+
-        	result.getMnombrecomunbarrio()+", estado: "+result.getMestadoinmueble());
-        	realEstateSearchResponseDTO.setLocation(new Location( 
+        	result.getMnombrecomunbarrio()+", estado: "+result.getMestadoinmueble() 
+        	+".Codigo de Metrocuadrado del inmueble: "+result.getMidinmueble());   
+        	realEstateSearchResponseDTO.setLocation(new Location(  
         			realEstateSearchRequestDTO.getLocation().getCity(), 
         			realEstateSearchRequestDTO.getLocation().getLocality()));
         	realEstateSearchResponseDTO.setNum_baths(realEstateSearchRequestDTO.getNumBaths());
@@ -65,7 +66,7 @@ public class MetroCuadradoPlatform extends RealEstatePlatform {
         	realEstateSearchResponseDTO.setNum_rooms(realEstateSearchRequestDTO.getNumRooms());
         	realEstateSearchResponseDTO.setOffer_type(realEstateSearchRequestDTO.getOfferType());
         	realEstateSearchResponseDTO.setPhotos(Arrays.asList(result.getImageLink()));
-        	DecimalFormat df = new DecimalFormat("#");
+        	DecimalFormat df = new DecimalFormat("#"); 
         	df.setMaximumFractionDigits(0);   
         	realEstateSearchResponseDTO.setPrice(df.format(result.getMvalorventa()));  
         	realEstateSearchResponseDTO.setReal_estate_platform("METROCUADRADO");
